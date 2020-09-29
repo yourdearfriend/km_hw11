@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i2K-7P-Y9L">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Your Favorite Dog-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="DogsUICollectionViewController" customModule="km_hw11" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZUe-kh-isQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="layoutMargins" id="FRB-gO-cZT">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="qye-nr-Rmi" customClass="DogViewCell" customModule="km_hw11" customModuleProvider="target">
+                                <rect key="frame" x="16" y="8" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XYH-WG-0p0" customClass="DogViewCell" customModule="km_hw11" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYu-J6-RJC">
+                                            <rect key="frame" x="29" y="39.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wYu-J6-RJC" firstAttribute="centerX" secondItem="XYH-WG-0p0" secondAttribute="centerX" id="N0O-rs-adi"/>
+                                        <constraint firstItem="wYu-J6-RJC" firstAttribute="centerY" secondItem="XYH-WG-0p0" secondAttribute="centerY" id="vMW-jg-k0K"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" red="0.1676210987" green="0.66666668650000005" blue="0.64613639950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="customSize" width="100" height="100"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="EpT-p9-jLH" kind="show" identifier="dogSegue" id="kyY-Vt-qqk"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="BYZ-38-t0r" id="5A2-de-9Mv"/>
+                            <outlet property="delegate" destination="BYZ-38-t0r" id="KI6-kH-RXa"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Your Favorite Dog" largeTitleDisplayMode="always" id="U70-fv-oKP"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="713.04347826086962" y="80.357142857142847"/>
+        </scene>
+        <!--Dog View Controller-->
+        <scene sceneID="8fa-Kc-85b">
+            <objects>
+                <viewController id="EpT-p9-jLH" customClass="DogViewController" customModule="km_hw11" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xge-iV-Fwv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-qh-nnw">
+                                <rect key="frame" x="33.5" y="96" width="308" height="491.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="z1g-qh-nnw" secondAttribute="height" multiplier="69:110" id="GJH-gw-2mr"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="iBG-zI-fVR">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzQ-5s-AMS">
+                                <rect key="frame" x="141" y="599" width="93" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Awww!"/>
+                                <connections>
+                                    <action selector="awwwButtonPressed:" destination="EpT-p9-jLH" eventType="touchUpInside" id="apv-zK-V0E"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zGg-eZ-ec5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="VzQ-5s-AMS" secondAttribute="bottom" constant="20" id="6hP-tE-U4c"/>
+                            <constraint firstItem="z1g-qh-nnw" firstAttribute="top" secondItem="zGg-eZ-ec5" secondAttribute="top" id="6w9-Dk-DMP"/>
+                            <constraint firstItem="iBG-zI-fVR" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="Wk7-zn-KSk"/>
+                            <constraint firstItem="VzQ-5s-AMS" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="d4m-Ql-RxS"/>
+                            <constraint firstItem="z1g-qh-nnw" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="lli-BN-OAo"/>
+                            <constraint firstItem="iBG-zI-fVR" firstAttribute="centerY" secondItem="xge-iV-Fwv" secondAttribute="centerY" id="nrN-Ep-sO3"/>
+                            <constraint firstItem="z1g-qh-nnw" firstAttribute="width" secondItem="xge-iV-Fwv" secondAttribute="height" multiplier="207:448" id="wTu-q8-nXh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jfh-py-ukW"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="iBG-zI-fVR" id="kpB-w8-HWw"/>
+                        <outlet property="dogView" destination="z1g-qh-nnw" id="pWk-LQ-Lfp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqQ-sb-1Ba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1534.7826086956522" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xLd-fp-xUc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i2K-7P-Y9L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Qit-9i-7It">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oU4-h0-KoB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3N-pb-qUa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="80.357142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

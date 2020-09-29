@@ -1,0 +1,6 @@
+framework module Pods_km_hw11 {
+  umbrella header "Pods-km_hw11-umbrella.h"
+
+  export *
+  module * { export * }
+}
