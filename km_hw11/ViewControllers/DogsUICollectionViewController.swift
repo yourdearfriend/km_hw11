@@ -27,54 +27,42 @@ class DogsUICollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let userAction = userActions[indexPath.item]
-        print(userAction)
-//        switch userAction {
-//        case .shiba:
-//            print("shiba")
-//            NetworkingManager.shared.fetchData(from: URLSExamples.shiba.rawValue) { dog in
-//                self.dog = dog
-//            }
-//            nextVC()
-//        case .akita:
-//            NetworkingManager.shared.fetchData(from: URLSExamples.akita.rawValue) { dog in
-//                self.dog = dog
-//            }
-//            nextVC()
-//        case .eksimo:
-//            NetworkingManager.shared.fetchData(from: URLSExamples.eksimo.rawValue) { dog in
-//                self.dog = dog
-//            }
-//            nextVC()
-//        case .husky:
-//            NetworkingManager.shared.fetchData(from: URLSExamples.husky.rawValue) { dog in
-//                self.dog = dog
-//            }
-//            nextVC()
-//        case .dachshund:
-//            NetworkingManager.shared.fetchData(from: URLSExamples.dachshund.rawValue) { dog in
-//                self.dog = dog
-//            }
-//            nextVC()
-//        case .mix:
-//            NetworkingManager.shared.fetchData(from: URLSExamples.mix.rawValue) { dog in
-//                self.dog = dog
-//            }
-//            nextVC()
-//        case .random:
-//            NetworkingManager.shared.fetchData(from: URLSExamples.random.rawValue) { dog in
-//                self.dog = dog
-//            }
-//            nextVC()
-//        }
+        switch userAction {
+        case .shiba:
+            print("shiba")
+            NetworkingManager.shared.fetchData(from: URLSExamples.shiba.rawValue) { dog in
+                self.dog = dog
+            }
+        case .akita:
+            NetworkingManager.shared.fetchData(from: URLSExamples.akita.rawValue) { dog in
+                self.dog = dog
+            }
+        case .eksimo:
+            NetworkingManager.shared.fetchData(from: URLSExamples.eksimo.rawValue) { dog in
+                self.dog = dog
+            }
+        case .husky:
+            NetworkingManager.shared.fetchData(from: URLSExamples.husky.rawValue) { dog in
+                self.dog = dog
+            }
+        case .dachshund:
+            NetworkingManager.shared.fetchData(from: URLSExamples.dachshund.rawValue) { dog in
+                self.dog = dog
+            }
+        case .mix:
+            NetworkingManager.shared.fetchData(from: URLSExamples.mix.rawValue) { dog in
+                self.dog = dog
+            }
+        case .random:
+            NetworkingManager.shared.fetchData(from: URLSExamples.random.rawValue) { dog in
+                self.dog = dog
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dogVC = segue.destination as! DogViewController
         dogVC.dog = self.dog
-    }
-    
-    func nextVC() {
-        performSegue(withIdentifier: "dogSegue", sender: nil)
     }
 }
 

@@ -16,11 +16,29 @@ class DogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupImageView(url: dog?.message ?? "www.ya.ru")
+        
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func awwwButtonPressed(_ sender: UIButton) {
-        
+        NetworkingManager.shared.fetchData(from: dog?.message ?? "www.ya.ru") { dog in
+            self.dog = dog
+        }
+        setupImageView(url: dog?.message ?? "www.ya.ru")
     }
+    
+    private func setupImageView(url: String) {
+        DispatchQueue.main.async {
+            guard let imageData = ImageManager.shared.fetchImage(from: url) else { return }
+            DispatchQueue.main.async {
+                self.dogView.image = UIImage(data: imageData)
+                self.activityIndicator.stopAnimating()
+                self.dogView.isHidden = false
+            }
+            
+        }
+    }
+    
 }
