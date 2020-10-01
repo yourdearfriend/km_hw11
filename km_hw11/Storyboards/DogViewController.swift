@@ -17,9 +17,6 @@ class DogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupImageView(url: dog?.message ?? "www.ya.ru")
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func awwwButtonPressed(_ sender: UIButton) {
@@ -39,6 +36,11 @@ class DogViewController: UIViewController {
             }
             
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dog = nil
     }
     
 }

@@ -12,7 +12,6 @@
         <!--Your Favorite Dog-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="DogsUICollectionViewController" customModule="km_hw11" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZUe-kh-isQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -47,7 +46,7 @@
                                 </collectionViewCellContentView>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="15"/>
+                                        <integer key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -59,6 +58,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Your Favorite Dog" largeTitleDisplayMode="always" id="U70-fv-oKP"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="712.79999999999995" y="79.610194902548727"/>
         </scene>
@@ -71,41 +71,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-qh-nnw">
-                                <rect key="frame" x="33.5" y="96" width="308" height="491.5"/>
+                                <rect key="frame" x="16" y="60" width="343" height="559"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="z1g-qh-nnw" secondAttribute="height" multiplier="69:110" id="GJH-gw-2mr"/>
+                                    <constraint firstAttribute="width" secondItem="z1g-qh-nnw" secondAttribute="height" multiplier="343:559" id="e0E-zH-QbO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="15"/>
+                                        <integer key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="iBG-zI-fVR">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzQ-5s-AMS">
-                                <rect key="frame" x="141" y="599" width="93" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Awww!"/>
-                                <connections>
-                                    <action selector="awwwButtonPressed:" destination="EpT-p9-jLH" eventType="touchUpInside" id="apv-zK-V0E"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zGg-eZ-ec5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="VzQ-5s-AMS" secondAttribute="bottom" constant="20" id="6hP-tE-U4c"/>
-                            <constraint firstItem="z1g-qh-nnw" firstAttribute="top" secondItem="zGg-eZ-ec5" secondAttribute="top" id="6w9-Dk-DMP"/>
-                            <constraint firstItem="iBG-zI-fVR" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="Wk7-zn-KSk"/>
-                            <constraint firstItem="VzQ-5s-AMS" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="d4m-Ql-RxS"/>
-                            <constraint firstItem="z1g-qh-nnw" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="lli-BN-OAo"/>
-                            <constraint firstItem="iBG-zI-fVR" firstAttribute="centerY" secondItem="xge-iV-Fwv" secondAttribute="centerY" id="nrN-Ep-sO3"/>
-                            <constraint firstItem="z1g-qh-nnw" firstAttribute="width" secondItem="xge-iV-Fwv" secondAttribute="height" multiplier="207:448" id="wTu-q8-nXh"/>
+                            <constraint firstItem="z1g-qh-nnw" firstAttribute="width" secondItem="xge-iV-Fwv" secondAttribute="height" multiplier="343:667" id="EY3-Qw-ntg"/>
+                            <constraint firstItem="iBG-zI-fVR" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="IqF-vp-h3V"/>
+                            <constraint firstItem="z1g-qh-nnw" firstAttribute="top" secondItem="zGg-eZ-ec5" secondAttribute="top" constant="16" id="Pfs-6p-mDr"/>
+                            <constraint firstItem="z1g-qh-nnw" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="ubf-X0-yvo"/>
+                            <constraint firstItem="iBG-zI-fVR" firstAttribute="centerY" secondItem="xge-iV-Fwv" secondAttribute="centerY" id="vI9-Af-UuP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jfh-py-ukW"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="jfh-py-ukW"/>
                     <connections>
                         <outlet property="activityIndicator" destination="iBG-zI-fVR" id="kpB-w8-HWw"/>
                         <outlet property="dogView" destination="z1g-qh-nnw" id="pWk-LQ-Lfp"/>
@@ -113,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqQ-sb-1Ba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534.7826086956522" y="79.6875"/>
+            <point key="canvasLocation" x="1533.5999999999999" y="79.610194902548727"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xLd-fp-xUc">
