@@ -9,8 +9,15 @@ import UIKit
 
 class DogsUICollectionViewController: UICollectionViewController {
     
+    
+    private let itemsPerRow: CGFloat = 2
+    private let sectionInserts = UIEdgeInsets(top: 16,
+                                              left: 16,
+                                              bottom: 16,
+                                              right: 16)
     private let userActions = UserActions.allCases
     var dog: Animal?
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return userActions.count
@@ -21,7 +28,7 @@ class DogsUICollectionViewController: UICollectionViewController {
         
         let userAction = userActions[indexPath.item]
         cell.dogNameLabel.text = userAction.rawValue
-        
+
         return cell
     }
     
@@ -62,26 +69,33 @@ class DogsUICollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dogVC = segue.destination as! DogViewController
-        dogVC.dog = self.dog
+        dogVC.dog = dog
     }
 }
 
 
 extension DogsUICollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width / 2.5 , height: 100)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 16
+        
+        let paddingWidth = sectionInserts.left * (itemsPerRow + 1)
+        print(paddingWidth)
+        let availableWidth = collectionView.frame.width - paddingWidth
+        print(availableWidth)
+        let widthPerItem = availableWidth / itemsPerRow
+        print(widthPerItem)
+        return CGSize(width: widthPerItem, height: widthPerItem)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        return sectionInserts
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInserts.left
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 16
+        return sectionInserts.left
     }
 }
 

@@ -16,14 +16,7 @@ class DogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupImageView(url: dog?.message ?? "www.ya.ru")
-    }
-    
-    @IBAction func awwwButtonPressed(_ sender: UIButton) {
-        NetworkingManager.shared.fetchData(from: dog?.message ?? "www.ya.ru") { dog in
-            self.dog = dog
-        }
-        setupImageView(url: dog?.message ?? "www.ya.ru")
+        setupImageView(url: dog?.message ?? "https://www.youarecurrent.com/wp-content/uploads/2014/09/PETS-Mikesell.jpg")
     }
     
     private func setupImageView(url: String) {
@@ -34,13 +27,6 @@ class DogViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
                 self.dogView.isHidden = false
             }
-            
         }
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        dog = nil
-    }
-    
 }

@@ -17,50 +17,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="layoutMargins" id="FRB-gO-cZT">
-                            <size key="itemSize" width="100" height="100"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8rs-vv-mH7">
+                            <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="wsp-Da-IQt" customClass="DogViewCell" customModule="km_hw11" customModuleProvider="target">
-                                <rect key="frame" x="16" y="8" width="100" height="100"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="PAo-P6-9z9" customClass="DogViewCell" customModule="km_hw11" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XYy-JW-YuK">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dpa-XF-L5G">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aT-Z4-0eW">
-                                            <rect key="frame" x="29" y="39.5" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cac-zX-qiu">
+                                            <rect key="frame" x="43" y="53.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.1676210987" green="0.66666668650000005" blue="0.64613639950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="9aT-Z4-0eW" firstAttribute="centerY" secondItem="XYy-JW-YuK" secondAttribute="centerY" id="Cnx-4i-dtl"/>
-                                        <constraint firstItem="9aT-Z4-0eW" firstAttribute="centerX" secondItem="XYy-JW-YuK" secondAttribute="centerX" id="qxf-Vi-z3b"/>
+                                        <constraint firstItem="Cac-zX-qiu" firstAttribute="centerX" secondItem="dpa-XF-L5G" secondAttribute="centerX" id="1qn-bf-OiT"/>
+                                        <constraint firstItem="Cac-zX-qiu" firstAttribute="centerY" secondItem="dpa-XF-L5G" secondAttribute="centerY" id="1zo-my-gRz"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.72656969800000004" blue="0.5307717945" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="customSize" width="128" height="128"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="16"/>
+                                        <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="dogNameLabel" destination="9aT-Z4-0eW" id="ep4-hZ-Evk"/>
-                                    <segue destination="EpT-p9-jLH" kind="show" id="aeY-e7-70F"/>
+                                    <outlet property="dogNameLabel" destination="Cac-zX-qiu" id="dAn-xi-JRJ"/>
+                                    <segue destination="EpT-p9-jLH" kind="show" id="wcy-6T-AAG"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="BYZ-38-t0r" id="ffq-fA-Pnr"/>
+                            <outlet property="delegate" destination="BYZ-38-t0r" id="CSg-8L-UYc"/>
+                        </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" title="Persons" image="person.3.fill" catalog="system" id="BaT-Lm-vmh"/>
                     <navigationItem key="navigationItem" title="Your Favorite Dog" largeTitleDisplayMode="always" id="U70-fv-oKP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712.79999999999995" y="79.610194902548727"/>
+            <point key="canvasLocation" x="1652" y="79.610194902548727"/>
         </scene>
         <!--Dog View Controller-->
         <scene sceneID="8fa-Kc-85b">
@@ -103,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqQ-sb-1Ba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1533.5999999999999" y="79.610194902548727"/>
+            <point key="canvasLocation" x="2472.8000000000002" y="79.610194902548727"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xLd-fp-xUc">
@@ -116,15 +122,35 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oU4-h0-KoB"/>
+                        <segue destination="7oT-7h-Bac" kind="relationship" relationship="rootViewController" id="oU4-h0-KoB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3N-pb-qUa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197.10144927536234" y="80.357142857142847"/>
         </scene>
+        <!--Dog Fathers-->
+        <scene sceneID="686-55-gv8">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7oT-7h-Bac" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Dog Fathers" id="Gbh-Ef-Ge8"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Heu-Vc-39N">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2ze-qu-cIg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yrO-2s-vtK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712.79999999999995" y="79.610194902548727"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
