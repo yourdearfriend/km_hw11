@@ -12,8 +12,8 @@ class DogViewController: UIViewController {
     @IBOutlet var dogView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    var dogURL: URLSExamples?
-    var dog: Animal?
+    var dogURL: URLSExamples!
+    var dog: Animal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
