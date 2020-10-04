@@ -9,14 +9,13 @@ import UIKit
 
 class DogsUICollectionViewController: UICollectionViewController {
     
-    
     private let itemsPerRow: CGFloat = 2
     private let sectionInserts = UIEdgeInsets(top: 16,
                                               left: 16,
                                               bottom: 16,
                                               right: 16)
     private let userActions = UserActions.allCases
-    var dog: Animal?
+    var dogURL: URLSExamples?
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -36,40 +35,25 @@ class DogsUICollectionViewController: UICollectionViewController {
         let userAction = userActions[indexPath.item]
         switch userAction {
         case .shiba:
-            print("shiba")
-            NetworkingManager.shared.fetchData(from: URLSExamples.shiba.rawValue) { dog in
-                self.dog = dog
-            }
+            dogURL = .shiba
         case .akita:
-            NetworkingManager.shared.fetchData(from: URLSExamples.akita.rawValue) { dog in
-                self.dog = dog
-            }
+            dogURL = .akita
         case .eksimo:
-            NetworkingManager.shared.fetchData(from: URLSExamples.eksimo.rawValue) { dog in
-                self.dog = dog
-            }
+            dogURL = .eksimo
         case .husky:
-            NetworkingManager.shared.fetchData(from: URLSExamples.husky.rawValue) { dog in
-                self.dog = dog
-            }
+            dogURL = .husky
         case .dachshund:
-            NetworkingManager.shared.fetchData(from: URLSExamples.dachshund.rawValue) { dog in
-                self.dog = dog
-            }
+            dogURL = .dachshund
         case .mix:
-            NetworkingManager.shared.fetchData(from: URLSExamples.mix.rawValue) { dog in
-                self.dog = dog
-            }
+            dogURL = .mix
         case .random:
-            NetworkingManager.shared.fetchData(from: URLSExamples.random.rawValue) { dog in
-                self.dog = dog
-            }
+            dogURL = .random
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dogVC = segue.destination as! DogViewController
-        dogVC.dog = dog
+        dogVC.dogURL = dogURL
     }
 }
 

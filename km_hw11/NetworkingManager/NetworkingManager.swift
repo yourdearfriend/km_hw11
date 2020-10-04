@@ -11,6 +11,7 @@ enum URLSExamples: String {
     case dachshund = "https://dog.ceo/api/breed/dachshund/images/random"
     case mix = "https://dog.ceo/api/breed/mix/images/random"
     case random = "https://dog.ceo/api/breeds/image/random"
+    case typical = "https://www.youarecurrent.com/wp-content/uploads/2014/09/PETS-Mikesell.jpg"
 }
 
 class NetworkingManager {

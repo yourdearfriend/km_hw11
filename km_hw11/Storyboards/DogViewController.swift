@@ -8,15 +8,27 @@
 import UIKit
 
 class DogViewController: UIViewController {
-
+    
     @IBOutlet var dogView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
+    var dogURL: URLSExamples?
     var dog: Animal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupImageView(url: dog?.message ?? "https://www.youarecurrent.com/wp-content/uploads/2014/09/PETS-Mikesell.jpg")
+        
+        NetworkingManager.shared.fetchData(from: dogURL?.rawValue ?? URLSExamples.random.rawValue) { dog in
+            self.dog = dog
+        }
+        setupImageView(url: dog?.message ?? URLSExamples.typical.rawValue)
+    }
+    
+    @IBAction func updateButtonPressed(_ sender: UIBarButtonItem) {
+        NetworkingManager.shared.fetchData(from: dogURL?.rawValue ?? URLSExamples.random.rawValue) { dog in
+            self.dog = dog
+        }
+        setupImageView(url: dog?.message ?? URLSExamples.typical.rawValue)
     }
     
     private func setupImageView(url: String) {
@@ -29,4 +41,8 @@ class DogViewController: UIViewController {
             }
         }
     }
+    
+    
+    
+    
 }

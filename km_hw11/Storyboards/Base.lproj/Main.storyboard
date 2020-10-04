@@ -77,10 +77,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-qh-nnw">
-                                <rect key="frame" x="16" y="60" width="343" height="559"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="z1g-qh-nnw" secondAttribute="height" multiplier="343:559" id="e0E-zH-QbO"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="60" width="343" height="591"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="16"/>
@@ -94,14 +91,22 @@
                         <viewLayoutGuide key="safeArea" id="zGg-eZ-ec5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="z1g-qh-nnw" firstAttribute="width" secondItem="xge-iV-Fwv" secondAttribute="height" multiplier="343:667" id="EY3-Qw-ntg"/>
+                            <constraint firstItem="zGg-eZ-ec5" firstAttribute="bottom" secondItem="z1g-qh-nnw" secondAttribute="bottom" constant="16" id="GHu-2R-6gZ"/>
+                            <constraint firstItem="z1g-qh-nnw" firstAttribute="leading" secondItem="zGg-eZ-ec5" secondAttribute="leading" constant="16" id="IPl-Hj-cUO"/>
                             <constraint firstItem="iBG-zI-fVR" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="IqF-vp-h3V"/>
                             <constraint firstItem="z1g-qh-nnw" firstAttribute="top" secondItem="zGg-eZ-ec5" secondAttribute="top" constant="16" id="Pfs-6p-mDr"/>
+                            <constraint firstItem="zGg-eZ-ec5" firstAttribute="trailing" secondItem="z1g-qh-nnw" secondAttribute="trailing" constant="16" id="aPu-db-dNo"/>
                             <constraint firstItem="z1g-qh-nnw" firstAttribute="centerX" secondItem="xge-iV-Fwv" secondAttribute="centerX" id="ubf-X0-yvo"/>
                             <constraint firstItem="iBG-zI-fVR" firstAttribute="centerY" secondItem="xge-iV-Fwv" secondAttribute="centerY" id="vI9-Af-UuP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="jfh-py-ukW"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="jfh-py-ukW">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.counterclockwise" catalog="system" id="TVi-i9-1lY">
+                            <connections>
+                                <action selector="updateButtonPressed:" destination="EpT-p9-jLH" id="c6W-1P-TK9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="iBG-zI-fVR" id="kpB-w8-HWw"/>
                         <outlet property="dogView" destination="z1g-qh-nnw" id="pWk-LQ-Lfp"/>
@@ -150,6 +155,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.counterclockwise" catalog="system" width="115" height="128"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
